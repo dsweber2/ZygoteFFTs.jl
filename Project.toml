@@ -3,11 +3,18 @@ uuid = "eabd4e0e-1788-418f-b6ab-d06bf374075d"
 authors = ["dsweber2"]
 version = "0.1.0"
 
+[deps]
+AbstractFFTs = "621f4979-c628-5d54-868e-fcf4e3e8185c"
+FillArrays = "1a297f60-69ca-5386-bcde-b61e274b549b"
+Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
+
 [compat]
 julia = "1.3.1"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+CuArrays = "3a865a2d-5b23-5a0f-bc46-62713ec82fae"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
 
 [targets]
-test = ["Test"]
+test = ["Test", "FFTW", "CuArrays"]

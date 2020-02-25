@@ -1,11 +1,11 @@
 module ZygoteFFTs
 using Zygote
 using AbstractFFTs
-using FilArrays
+using FillArrays
 
-AbstractFFTs.fft(x::Fill, dims...) = AbstractFFTs.fft(collect(x), dims...)
+import Zygote:@adjoint
+
 AbstractFFTs.bfft(x::Fill, dims...) = AbstractFFTs.bfft(collect(x), dims...)
-AbstractFFTs.ifft(x::Fill, dims...) = AbstractFFTs.ifft(collect(x), dims...)
 AbstractFFTs.rfft(x::Fill, dims...) = AbstractFFTs.rfft(collect(x), dims...)
 AbstractFFTs.irfft(x::Fill, d, dims...) = AbstractFFTs.irfft(collect(x), d, dims...)
 
